@@ -2,6 +2,7 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 from imutils.video import VideoStream
+import winsound
 import imutils
 import cv2,os,urllib.request
 import numpy as np
@@ -103,6 +104,10 @@ class MaskDetect(object):
 			# the bounding box and text
 			label = "Mask" if mask > withoutMask else "No Mask"
 			color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+
+
+			if label == "No Mask":        
+				winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
 
 			# include the probability in the label
 			label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
