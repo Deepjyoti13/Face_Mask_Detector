@@ -36,7 +36,7 @@
     <div class="front row">
       <div class="col-12">
         <br class="x"><br class="x"><br class="x"><br class="x">
-        {% if user.is_authenticate %}
+        {% if user.is_authenticated %}
         <h3 style="font-family: Roboto; color: #363030;" class="mb-3 text-center">Hey, {{ user.username }}</h3>
         {% else %}
         <h3 style="font-family: Roboto; color: #363030;" class="mb-5 text-center">You are not the admin!</h3>
