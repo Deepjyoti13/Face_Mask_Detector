@@ -33,20 +33,25 @@
     <div class="front row">
       <div class="col-12">
         <br class="x"><br class="x"><br class="x"><br class="x">
+        {% if user.is_authenticate %}
+        <h3 style="font-family: Roboto; color: #363030;" class="mb-3 text-center">Hey, {{ user.username }}</h3>
+        {% else %}
+        <h3 style="font-family: Roboto; color: #363030;" class="mb-5 text-center">You are not the admin!</h3>
+        {% endif %}
         <h1 style="font-family: Comfortaa;" class="headline text-center">Face Mask Detection Tool</h1>
         <hr class="mx-5">
-        <p style="font-family: 'Roboto', sans-serif; font-size: 15px;" class="mt-2 lead text-center">The world is suffering from the
+        <p style="font-family: 'Roboto', sans-serif; font-size: 25px;" class="mx-5 mt-2 lead text-center">The world is suffering from the
           vatal impacts of COVID-19. Millions and millions of lives are lost and affected in the worst possible way.
           Many measures are taken to better the situation. Wearing mask has become a norm while going out. Yet many people fail to entertain this minimum
           rule. So, to make people more conscious to wear masks we have come up with this project to detect whether a
           person is wearing a mask or not.</p>
-        <p class="text-center" style="font-family: 'Comfortaa';">Submitted by: Group 11</p>
-        <p class="text-center" style="font-family: 'Comfortaa';">Amitabha Majumder (17UCS101) | Himadri Shekhar Debroy
-          (17UCS069)  |  Deepjyoti De (17UCS008) | Diptanu Sarkar (17UCS030)</p>
+        <h5 class="mt-5 text-center" style="font-family: 'Comfortaa';">Submitted by: Group 11</h5>
+        <h5 class="text-center" style="font-family: 'Comfortaa';">Amitabha Majumder (17UCS101) | Himadri Shekhar Debroy
+          (17UCS069)  |  Deepjyoti De (17UCS008) | Diptanu Sarkar (17UCS030)</h5>
       </div>
 
       <div class="col-12 text-center">
-        <a href="#about"><i id="scrollIcon" class="fa fa-angle-down" aria-hidden="true"></i></a>
+        <a href="#about"><i id="scrollIcon" class="mt-5 fa fa-angle-down" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -54,7 +59,12 @@
     <div style="height: 100vh;" id="about" class="row cover">
       <h2 style="font-family: Comfortaa; color: gray;" class="mt-5 text-center">Face the camera to your face.</h2>
       <div class="text-center">
+        {% if user.is_authenticated %}
         <img src="{% url 'mask_feed' %}">
+        {% else %}
+          <h1 style="font-size: 25px;color: gray;"> <i class="fa fa-angle-right    "></i> Kindly login as an administrator or contact any admin.</h1>
+          <h1 style="font-size: 25px;color: gray;"> <i class="fa fa-angle-right    "></i> <a class="text-white" href="/admin"> Login</a></h1>
+        {% endif %}
       </div>
     </div><!-- End #About -->
 
