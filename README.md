@@ -1,4 +1,4 @@
-T# Face Mask Detector
+# Face Mask Detector
 Submitted by Group 11.
 Under the supevision of Dr. Swapan Debbarma.
 Presented by Amitabha Majumder, Himadri Shekhar Debroy, Deepjyoti De and Diptanu Sarkar.
