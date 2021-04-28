@@ -8,9 +8,14 @@ How to run this code on your windows system? Here's how:
 Clone this code on to your computer and save in your desired location.
 Open command prompt from the location bar or open the command prompt and access the file location.
 Run the following codes:
-pip install virtualenvwrapper-win
-mkvirtualenv web
-pip install -r requirements.txt
-python manage.py runserver
+
+1. pip install virtualenvwrapper-win
+
+2. mkvirtualenv web
+
+3. pip install -r requirements.txt
+
+4. python manage.py runserver
+
 
 And you are done.
